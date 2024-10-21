@@ -21,5 +21,10 @@ namespace QuanLyVatLieuXayDung
         {
 
         }
+
+        private void txtUserName_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
