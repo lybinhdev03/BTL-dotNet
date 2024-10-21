@@ -1,0 +1,71 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\bt.net\\btl\\btl-dotnet\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6BACF926-A79C-4F97-AA4D-8AD6113E6840}|QuanLyVatLieuXayDung\\QuanLyVatLieuXayDung.csproj|d:\\bt.net\\btl\\btl-dotnet\\quanlyvatlieuxaydung\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6BACF926-A79C-4F97-AA4D-8AD6113E6840}|QuanLyVatLieuXayDung\\QuanLyVatLieuXayDung.csproj|solutionrelative:quanlyvatlieuxaydung\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6BACF926-A79C-4F97-AA4D-8AD6113E6840}|QuanLyVatLieuXayDung\\QuanLyVatLieuXayDung.csproj|D:\\bt.net\\btl\\btl-dotnet\\quanlyvatlieuxaydung\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6BACF926-A79C-4F97-AA4D-8AD6113E6840}|QuanLyVatLieuXayDung\\QuanLyVatLieuXayDung.csproj|solutionrelative:quanlyvatlieuxaydung\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6BACF926-A79C-4F97-AA4D-8AD6113E6840}|QuanLyVatLieuXayDung\\QuanLyVatLieuXayDung.csproj|D:\\bt.net\\btl\\btl-dotnet\\quanlyvatlieuxaydung\\thanhtoan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6BACF926-A79C-4F97-AA4D-8AD6113E6840}|QuanLyVatLieuXayDung\\QuanLyVatLieuXayDung.csproj|solutionrelative:quanlyvatlieuxaydung\\thanhtoan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\bt.net\\btl\\btl-dotnet\\QuanLyVatLieuXayDung\\Program.cs",
+              "RelativeDocumentMoniker": "QuanLyVatLieuXayDung\\Program.cs",
+              "ToolTip": "D:\\bt.net\\btl\\btl-dotnet\\QuanLyVatLieuXayDung\\Program.cs",
+              "RelativeToolTip": "QuanLyVatLieuXayDung\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-21T08:46:41.403Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "login.cs [Design]",
+              "DocumentMoniker": "D:\\bt.net\\btl\\btl-dotnet\\QuanLyVatLieuXayDung\\login.cs",
+              "RelativeDocumentMoniker": "QuanLyVatLieuXayDung\\login.cs",
+              "ToolTip": "D:\\bt.net\\btl\\btl-dotnet\\QuanLyVatLieuXayDung\\login.cs [Design]",
+              "RelativeToolTip": "QuanLyVatLieuXayDung\\login.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-21T03:57:10.121Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ThanhToan.cs [Design]",
+              "DocumentMoniker": "D:\\bt.net\\btl\\btl-dotnet\\QuanLyVatLieuXayDung\\ThanhToan.cs",
+              "RelativeDocumentMoniker": "QuanLyVatLieuXayDung\\ThanhToan.cs",
+              "ToolTip": "D:\\bt.net\\btl\\btl-dotnet\\QuanLyVatLieuXayDung\\ThanhToan.cs [Design]",
+              "RelativeToolTip": "QuanLyVatLieuXayDung\\ThanhToan.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-21T03:46:15.334Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
