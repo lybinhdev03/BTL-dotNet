@@ -21,5 +21,10 @@ namespace QuanLyVatLieuXayDung
         {
 
         }
+
+        private void DatHang_Resize(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

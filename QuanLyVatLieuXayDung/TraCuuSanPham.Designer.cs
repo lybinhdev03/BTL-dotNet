@@ -29,21 +29,26 @@
         private void InitializeComponent()
         {
             this.tbSanPham = new System.Windows.Forms.DataGridView();
-            this.lbText = new System.Windows.Forms.Label();
-            this.cbLoaiTraCuu = new System.Windows.Forms.ComboBox();
-            this.txtTraCuuSP = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnTraCuu = new System.Windows.Forms.Button();
             this.MaSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Soluong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Donvi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GiaSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lbText = new System.Windows.Forms.Label();
+            this.cbLoaiTraCuu = new System.Windows.Forms.ComboBox();
+            this.txtTraCuuSP = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnTraCuu = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tbSanPham)).BeginInit();
             this.SuspendLayout();
             // 
             // tbSanPham
             // 
+            this.tbSanPham.AllowUserToAddRows = false;
+            this.tbSanPham.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbSanPham.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.tbSanPham.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.tbSanPham.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             this.tbSanPham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -60,6 +65,37 @@
             this.tbSanPham.RowTemplate.Height = 24;
             this.tbSanPham.Size = new System.Drawing.Size(1160, 470);
             this.tbSanPham.TabIndex = 0;
+            // 
+            // MaSP
+            // 
+            this.MaSP.HeaderText = "         Mã sản phẩm";
+            this.MaSP.MinimumWidth = 6;
+            this.MaSP.Name = "MaSP";
+            this.MaSP.ReadOnly = true;
+            // 
+            // TenSP
+            // 
+            this.TenSP.HeaderText = "                        Tên sản phẩm";
+            this.TenSP.MinimumWidth = 6;
+            this.TenSP.Name = "TenSP";
+            // 
+            // Soluong
+            // 
+            this.Soluong.HeaderText = "           Số lượng";
+            this.Soluong.MinimumWidth = 6;
+            this.Soluong.Name = "Soluong";
+            // 
+            // Donvi
+            // 
+            this.Donvi.HeaderText = "             Đơn vị";
+            this.Donvi.MinimumWidth = 6;
+            this.Donvi.Name = "Donvi";
+            // 
+            // GiaSP
+            // 
+            this.GiaSP.HeaderText = "                     Giá sản phẩm";
+            this.GiaSP.MinimumWidth = 6;
+            this.GiaSP.Name = "GiaSP";
             // 
             // lbText
             // 
@@ -108,42 +144,6 @@
             this.btnTraCuu.TabIndex = 8;
             this.btnTraCuu.Text = "Tra cứu";
             this.btnTraCuu.UseVisualStyleBackColor = true;
-            // 
-            // MaSP
-            // 
-            this.MaSP.HeaderText = "         Mã sản phẩm";
-            this.MaSP.MinimumWidth = 6;
-            this.MaSP.Name = "MaSP";
-            this.MaSP.ReadOnly = true;
-            this.MaSP.Width = 160;
-            // 
-            // TenSP
-            // 
-            this.TenSP.HeaderText = "                        Tên sản phẩm";
-            this.TenSP.MinimumWidth = 6;
-            this.TenSP.Name = "TenSP";
-            this.TenSP.Width = 400;
-            // 
-            // Soluong
-            // 
-            this.Soluong.HeaderText = "           Số lượng";
-            this.Soluong.MinimumWidth = 6;
-            this.Soluong.Name = "Soluong";
-            this.Soluong.Width = 150;
-            // 
-            // Donvi
-            // 
-            this.Donvi.HeaderText = "             Đơn vị";
-            this.Donvi.MinimumWidth = 6;
-            this.Donvi.Name = "Donvi";
-            this.Donvi.Width = 150;
-            // 
-            // GiaSP
-            // 
-            this.GiaSP.HeaderText = "                     Giá sản phẩm";
-            this.GiaSP.MinimumWidth = 6;
-            this.GiaSP.Name = "GiaSP";
-            this.GiaSP.Width = 300;
             // 
             // TraCuuSanPham
             // 

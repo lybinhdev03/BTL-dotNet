@@ -26,5 +26,20 @@ namespace QuanLyVatLieuXayDung
         {
 
         }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            if (txtUserName.Text == "admin" && txtPassWord.Text == "admin")
+            {
+                menu Menu = new menu();
+                Menu.Show();
+            }
+
+        }
+
+        private void txtPassWord_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
