@@ -24,3 +24,17 @@ D:\BTL .NET\btl-dotnet\QuanLyVatLieuXayDung\obj\Debug\QuanLyVatLieuXayDung.cspro
 D:\BTL .NET\btl-dotnet\QuanLyVatLieuXayDung\obj\Debug\QuanLyVatLieuXayDung.csproj.CoreCompileInputs.cache
 D:\BTL .NET\btl-dotnet\QuanLyVatLieuXayDung\obj\Debug\QuanLyVatLieuXayDung.exe
 D:\BTL .NET\btl-dotnet\QuanLyVatLieuXayDung\obj\Debug\QuanLyVatLieuXayDung.pdb
+E:\Project\dotnet\btl_dotNET\BTL-dotNet\QuanLyVatLieuXayDung\bin\Debug\QuanLyVatLieuXayDung.exe.config
+E:\Project\dotnet\btl_dotNET\BTL-dotNet\QuanLyVatLieuXayDung\bin\Debug\QuanLyVatLieuXayDung.exe
+E:\Project\dotnet\btl_dotNET\BTL-dotNet\QuanLyVatLieuXayDung\bin\Debug\QuanLyVatLieuXayDung.pdb
+E:\Project\dotnet\btl_dotNET\BTL-dotNet\QuanLyVatLieuXayDung\obj\Debug\QuanLyVatLieuXayDung.csproj.AssemblyReference.cache
+E:\Project\dotnet\btl_dotNET\BTL-dotNet\QuanLyVatLieuXayDung\obj\Debug\QuanLyVatLieuXayDung.DatHang.resources
+E:\Project\dotnet\btl_dotNET\BTL-dotNet\QuanLyVatLieuXayDung\obj\Debug\QuanLyVatLieuXayDung.login.resources
+E:\Project\dotnet\btl_dotNET\BTL-dotNet\QuanLyVatLieuXayDung\obj\Debug\QuanLyVatLieuXayDung.menu.resources
+E:\Project\dotnet\btl_dotNET\BTL-dotNet\QuanLyVatLieuXayDung\obj\Debug\QuanLyVatLieuXayDung.Properties.Resources.resources
+E:\Project\dotnet\btl_dotNET\BTL-dotNet\QuanLyVatLieuXayDung\obj\Debug\QuanLyVatLieuXayDung.TraCuuSanPham.resources
+E:\Project\dotnet\btl_dotNET\BTL-dotNet\QuanLyVatLieuXayDung\obj\Debug\QuanLyVatLieuXayDung.csproj.GenerateResource.cache
+E:\Project\dotnet\btl_dotNET\BTL-dotNet\QuanLyVatLieuXayDung\obj\Debug\QuanLyVatLieuXayDung.csproj.CoreCompileInputs.cache
+E:\Project\dotnet\btl_dotNET\BTL-dotNet\QuanLyVatLieuXayDung\obj\Debug\QuanLyVatLieuXayDung.exe
+E:\Project\dotnet\btl_dotNET\BTL-dotNet\QuanLyVatLieuXayDung\obj\Debug\QuanLyVatLieuXayDung.pdb
+E:\Project\dotnet\btl_dotNET\BTL-dotNet\QuanLyVatLieuXayDung\obj\Debug\QuanLyVatLieuXayDung.FNhapHang.resources
