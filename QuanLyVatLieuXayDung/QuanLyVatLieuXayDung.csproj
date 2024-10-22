@@ -82,6 +82,12 @@
     <Compile Include="DatHang.Designer.cs">
       <DependentUpon>DatHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="FNhapHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FNhapHang.Designer.cs">
+      <DependentUpon>FNhapHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="login.cs">
       <SubType>Form</SubType>
     </Compile>
