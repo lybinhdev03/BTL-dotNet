@@ -17,26 +17,14 @@ namespace QuanLyVatLieuXayDung
             InitializeComponent();
         }
 
-        private void bánHàngToolStripMenuItem_Click(object sender, EventArgs e)
+        private void menu_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void menuKhachHang_Click(object sender, EventArgs e)
+        private void hệThốngToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void đặtHàngToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            DatHang datHang = new DatHang();
-            datHang.Show();
-        }
-
-        private void traCứuSảnPhẩmToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            TraCuuSanPham traCuuSanPham = new TraCuuSanPham();
-            traCuuSanPham.Show();
         }
     }
 }

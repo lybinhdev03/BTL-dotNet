@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace QuanLyVatLieuXayDung
 {
-    public partial class CapNhatKho : Form
+    public partial class hoaDonXuat : Form
     {
-        public CapNhatKho()
+        public hoaDonXuat()
         {
             InitializeComponent();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DatHang_Resize(object sender, EventArgs e)
+        {
+            
         }
     }
 }
