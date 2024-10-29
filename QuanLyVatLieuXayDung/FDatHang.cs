@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace QuanLyVatLieuXayDung
 {
-    public partial class DatHang : Form
+    public partial class FDatHang : Form
     {
-        public DatHang()
+        public FDatHang()
         {
             InitializeComponent();
         }

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace QuanLyVatLieuXayDung
 {
-    public partial class login : Form
+    public partial class FLogin : Form
     {
-        public login()
+        public FLogin()
         {
             InitializeComponent();
         }
@@ -31,7 +31,7 @@ namespace QuanLyVatLieuXayDung
         {
             if (txtUserName.Text == "admin" && txtPassWord.Text == "admin")
             {
-                menu Menu = new menu();
+                Fmenu Menu = new Fmenu();
                 Menu.Show();
             }
 

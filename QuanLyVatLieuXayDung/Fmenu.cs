@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace QuanLyVatLieuXayDung
 {
-    public partial class menu : Form
+    public partial class Fmenu : Form
     {
-        public menu()
+        public Fmenu()
         {
             InitializeComponent();
         }
@@ -29,7 +29,7 @@ namespace QuanLyVatLieuXayDung
 
         private void đặtHàngToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DatHang datHang = new DatHang();
+            FDatHang datHang = new FDatHang();
             datHang.Show();
         }
 

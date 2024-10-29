@@ -46,41 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaoCao.cs">
+    <Compile Include="FDatHang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BaoCao.Designer.cs">
-      <DependentUpon>BaoCao.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CapNhatBaoHanh.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CapNhatBaoHanh.Designer.cs">
-      <DependentUpon>CapNhatBaoHanh.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CapNhatKH.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CapNhatKH.Designer.cs">
-      <DependentUpon>CapNhatKH.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CapNhatKho.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CapNhatKho.Designer.cs">
-      <DependentUpon>CapNhatKho.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CapNhatNCC.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CapNhatNCC.Designer.cs">
-      <DependentUpon>CapNhatNCC.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DatHang.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DatHang.Designer.cs">
-      <DependentUpon>DatHang.cs</DependentUpon>
+    <Compile Include="FDatHang.Designer.cs">
+      <DependentUpon>FDatHang.cs</DependentUpon>
     </Compile>
     <Compile Include="FChiTietXuatHang.cs">
       <SubType>Form</SubType>
@@ -106,23 +76,17 @@
     <Compile Include="FXuatHang.Designer.cs">
       <DependentUpon>FXuatHang.cs</DependentUpon>
     </Compile>
-    <Compile Include="login.cs">
+    <Compile Include="FLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="login.Designer.cs">
-      <DependentUpon>login.cs</DependentUpon>
+    <Compile Include="FLogin.Designer.cs">
+      <DependentUpon>FLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="menu.cs">
+    <Compile Include="Fmenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="menu.Designer.cs">
-      <DependentUpon>menu.cs</DependentUpon>
-    </Compile>
-    <Compile Include="NhapHang.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="NhapHang.Designer.cs">
-      <DependentUpon>NhapHang.cs</DependentUpon>
+    <Compile Include="Fmenu.Designer.cs">
+      <DependentUpon>Fmenu.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -131,56 +95,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="ThanhToan.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ThanhToan.Designer.cs">
-      <DependentUpon>ThanhToan.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ThongKe.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ThongKe.Designer.cs">
-      <DependentUpon>ThongKe.cs</DependentUpon>
-    </Compile>
-    <Compile Include="TraCuuBaoHanh.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TraCuuBaoHanh.Designer.cs">
-      <DependentUpon>TraCuuBaoHanh.cs</DependentUpon>
-    </Compile>
-    <Compile Include="TraCuuKH.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TraCuuKH.Designer.cs">
-      <DependentUpon>TraCuuKH.cs</DependentUpon>
-    </Compile>
-    <Compile Include="TraCuuKho.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TraCuuKho.Designer.cs">
-      <DependentUpon>TraCuuKho.cs</DependentUpon>
-    </Compile>
-    <Compile Include="TraCuuNCC.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TraCuuNCC.Designer.cs">
-      <DependentUpon>TraCuuNCC.cs</DependentUpon>
-    </Compile>
-    <Compile Include="TraCuuSanPham.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TraCuuSanPham.Designer.cs">
-      <DependentUpon>TraCuuSanPham.cs</DependentUpon>
-    </Compile>
-    <Compile Include="XuatPhieuBaoHanh.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="XuatPhieuBaoHanh.Designer.cs">
-      <DependentUpon>XuatPhieuBaoHanh.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="DatHang.resx">
-      <DependentUpon>DatHang.cs</DependentUpon>
+    <EmbeddedResource Include="FDatHang.resx">
+      <DependentUpon>FDatHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FChiTietXuatHang.resx">
       <DependentUpon>FChiTietXuatHang.cs</DependentUpon>
@@ -194,19 +110,16 @@
     <EmbeddedResource Include="FXuatHang.resx">
       <DependentUpon>FXuatHang.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="login.resx">
-      <DependentUpon>login.cs</DependentUpon>
+    <EmbeddedResource Include="FLogin.resx">
+      <DependentUpon>FLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="menu.resx">
-      <DependentUpon>menu.cs</DependentUpon>
+    <EmbeddedResource Include="Fmenu.resx">
+      <DependentUpon>Fmenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TraCuuSanPham.resx">
-      <DependentUpon>TraCuuSanPham.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

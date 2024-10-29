@@ -1,6 +1,6 @@
 ﻿namespace QuanLyVatLieuXayDung
 {
-    partial class DatHang
+    partial class FDatHang
     {
         /// <summary>
         /// Required designer variable.

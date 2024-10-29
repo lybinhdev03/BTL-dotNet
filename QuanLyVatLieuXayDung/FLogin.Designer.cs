@@ -1,6 +1,6 @@
 ﻿namespace QuanLyVatLieuXayDung
 {
-    partial class login
+    partial class FLogin
     {
         /// <summary>
         /// Required designer variable.

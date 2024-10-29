@@ -1,6 +1,6 @@
 ﻿namespace QuanLyVatLieuXayDung
 {
-    partial class menu
+    partial class Fmenu
     {
         /// <summary>
         /// Required designer variable.
