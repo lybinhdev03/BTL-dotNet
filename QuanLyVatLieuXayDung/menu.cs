@@ -35,8 +35,29 @@ namespace QuanLyVatLieuXayDung
 
         private void traCứuSảnPhẩmToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            TraCuuSanPham traCuuSanPham = new TraCuuSanPham();
-            traCuuSanPham.Show();
+            FHangHoa qlHangHoa = new FHangHoa();
+            qlHangHoa.Show();
+        }
+
+        private void thanhToánToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FXuatHang qlhdx = new FXuatHang();
+            qlhdx.Show();
+        }
+
+        private void traCứuThôngItToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void đặtHàngToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void traCứuThôngItnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

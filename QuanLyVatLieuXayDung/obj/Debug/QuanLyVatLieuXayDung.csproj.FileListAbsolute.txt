@@ -38,3 +38,6 @@ E:\Project\dotnet\btl_dotNET\BTL-dotNet\QuanLyVatLieuXayDung\obj\Debug\QuanLyVat
 E:\Project\dotnet\btl_dotNET\BTL-dotNet\QuanLyVatLieuXayDung\obj\Debug\QuanLyVatLieuXayDung.exe
 E:\Project\dotnet\btl_dotNET\BTL-dotNet\QuanLyVatLieuXayDung\obj\Debug\QuanLyVatLieuXayDung.pdb
 E:\Project\dotnet\btl_dotNET\BTL-dotNet\QuanLyVatLieuXayDung\obj\Debug\QuanLyVatLieuXayDung.FNhapHang.resources
+E:\Project\dotnet\btl_dotNET\BTL-dotNet\QuanLyVatLieuXayDung\obj\Debug\QuanLyVatLieuXayDung.FHangHoa.resources
+E:\Project\dotnet\btl_dotNET\BTL-dotNet\QuanLyVatLieuXayDung\obj\Debug\QuanLyVatLieuXayDung.FChiTietXuatHang.resources
+E:\Project\dotnet\btl_dotNET\BTL-dotNet\QuanLyVatLieuXayDung\obj\Debug\QuanLyVatLieuXayDung.FXuatHang.resources
