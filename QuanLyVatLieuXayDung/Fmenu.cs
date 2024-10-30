@@ -41,7 +41,7 @@ namespace QuanLyVatLieuXayDung
 
         private void thanhToánToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FXuatHang qlhdx = new FXuatHang();
+            FHDXuatHang qlhdx = new FHDXuatHang();
             qlhdx.Show();
         }
 
@@ -57,7 +57,19 @@ namespace QuanLyVatLieuXayDung
 
         private void traCứuThôngItnToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            FNhapHang fNhap = new FNhapHang();
+            fNhap.Show();
+        }
 
+        private void Fmenu_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cậpNhậtThôngTinToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FKhachHang fkh = new FKhachHang();
+            fkh.Show();
         }
     }
 }

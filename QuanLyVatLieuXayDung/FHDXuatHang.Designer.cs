@@ -1,6 +1,6 @@
 ﻿namespace QuanLyVatLieuXayDung
 {
-    partial class FXuatHang
+    partial class FHDXuatHang
     {
         /// <summary>
         /// Required designer variable.

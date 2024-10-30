@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace QuanLyVatLieuXayDung
 {
-    public partial class FXuatHang : Form
+    public partial class FHDXuatHang : Form
     {
-        public FXuatHang()
+        public FHDXuatHang()
         {
             InitializeComponent();
         }
@@ -24,7 +24,7 @@ namespace QuanLyVatLieuXayDung
 
         private void button5_Click(object sender, EventArgs e)
         {
-            FChiTietXuatHang fctxh = new FChiTietXuatHang();
+            FHDChiTietXuatHang fctxh = new FHDChiTietXuatHang();
             fctxh.Show();
         }
     }

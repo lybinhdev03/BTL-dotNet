@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace QuanLyVatLieuXayDung
 {
-    public partial class FChiTietXuatHang : Form
+    public partial class FHDChiTietXuatHang : Form
     {
-        public FChiTietXuatHang()
+        public FHDChiTietXuatHang()
         {
             InitializeComponent();
         }

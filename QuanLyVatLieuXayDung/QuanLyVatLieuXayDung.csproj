@@ -52,11 +52,11 @@
     <Compile Include="FDatHang.Designer.cs">
       <DependentUpon>FDatHang.cs</DependentUpon>
     </Compile>
-    <Compile Include="FChiTietXuatHang.cs">
+    <Compile Include="FHDChiTietXuatHang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FChiTietXuatHang.Designer.cs">
-      <DependentUpon>FChiTietXuatHang.cs</DependentUpon>
+    <Compile Include="FHDChiTietXuatHang.Designer.cs">
+      <DependentUpon>FHDChiTietXuatHang.cs</DependentUpon>
     </Compile>
     <Compile Include="FHangHoa.cs">
       <SubType>Form</SubType>
@@ -64,17 +64,23 @@
     <Compile Include="FHangHoa.Designer.cs">
       <DependentUpon>FHangHoa.cs</DependentUpon>
     </Compile>
+    <Compile Include="FKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FKhachHang.Designer.cs">
+      <DependentUpon>FKhachHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="FNhapHang.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FNhapHang.Designer.cs">
       <DependentUpon>FNhapHang.cs</DependentUpon>
     </Compile>
-    <Compile Include="FXuatHang.cs">
+    <Compile Include="FHDXuatHang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FXuatHang.Designer.cs">
-      <DependentUpon>FXuatHang.cs</DependentUpon>
+    <Compile Include="FHDXuatHang.Designer.cs">
+      <DependentUpon>FHDXuatHang.cs</DependentUpon>
     </Compile>
     <Compile Include="FLogin.cs">
       <SubType>Form</SubType>
@@ -98,17 +104,20 @@
     <EmbeddedResource Include="FDatHang.resx">
       <DependentUpon>FDatHang.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FChiTietXuatHang.resx">
-      <DependentUpon>FChiTietXuatHang.cs</DependentUpon>
+    <EmbeddedResource Include="FHDChiTietXuatHang.resx">
+      <DependentUpon>FHDChiTietXuatHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FHangHoa.resx">
       <DependentUpon>FHangHoa.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FKhachHang.resx">
+      <DependentUpon>FKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FNhapHang.resx">
       <DependentUpon>FNhapHang.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FXuatHang.resx">
-      <DependentUpon>FXuatHang.cs</DependentUpon>
+    <EmbeddedResource Include="FHDXuatHang.resx">
+      <DependentUpon>FHDXuatHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FLogin.resx">
       <DependentUpon>FLogin.cs</DependentUpon>
