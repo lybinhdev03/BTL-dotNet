@@ -19,6 +19,7 @@ namespace QuanLyVatLieuXayDung
         public FHangHoa()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
             LoadData(); 
             txt_id.ReadOnly = true;
             dataGridViewHangHoa.ReadOnly = true;
@@ -223,5 +224,10 @@ namespace QuanLyVatLieuXayDung
                 }
             }
          }
+
+        private void txt_search_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

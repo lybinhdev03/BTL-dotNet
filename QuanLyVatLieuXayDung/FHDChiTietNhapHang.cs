@@ -11,79 +11,23 @@ using System.Windows.Forms;
 
 namespace QuanLyVatLieuXayDung
 {
-    public partial class FHDChiTietXuatHang : Form
+    public partial class FHDChiTietNhapHang : Form
     {
         // Dùng cái này khi làm với sql server (đổi user, pass)
         //private readonly string connectionString = "Data Source=your_server_name;Initial Catalog=vlxd;User ID=;Password=;";
         private readonly string connectionString = "Server=localhost,1433; Database=db_vlxd; User Id=sa; Password=@Khongbiet123;";
-        private int maHoaDonXuat;
-        public FHDChiTietXuatHang(int maHoaDonXuat)
+        private int maHoaDonNhap;
+        public FHDChiTietNhapHang(int maHoaDonNhap)
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
-            this.maHoaDonXuat = maHoaDonXuat;
+            this.maHoaDonNhap = maHoaDonNhap;
             LoadChiTiet();
             txt_idhd.ReadOnly = true;
             txt_giaTien.ReadOnly = true;
-            lb_idhd1.Text = "Chi tiết hóa đơn xuất hàng " + maHoaDonXuat;
+            lb_idhd2.Text = "Chi tiết hóa đơn nhập hàng " + maHoaDonNhap;
         }
 
-        private void FHDChiTietXuatHang_Load(object sender, EventArgs e)
-        {
-        }
-
-        private void LoadChiTiet()
-        {
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
-                conn.Open();
-                string query = @"
-                                SELECT 
-                                    c.MaHoaDonXuat,
-                                    h.MaHangHoa,
-                                    h.TenSanPham,
-                                    c.SoLuong,
-                                    c.DonGia,
-                                    (c.SoLuong * c.DonGia) AS ThanhTien
-                                FROM 
-                                    ChiTietHoaDonXuat c
-                                JOIN 
-                                    HangHoa h ON c.MaHangHoa = h.MaHangHoa
-                                WHERE 
-                                    c.MaHoaDonXuat = @MaHoaDonXuat";
-
-                SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@MaHoaDonXuat", maHoaDonXuat);
-
-                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                adapter.Fill(dt);
-                dataGridViewcthdxh.DataSource = dt; // Hiển thị lên DataGridView
-
-                // Cài đặt các thuộc tính cho DataGridView
-                dataGridViewcthdxh.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-                dataGridViewcthdxh.Columns["MaHoaDonXuat"].HeaderText = "Mã Hóa Đơn";
-                dataGridViewcthdxh.Columns["MaHangHoa"].HeaderText = "Mã Hàng Hóa";
-                dataGridViewcthdxh.Columns["TenSanPham"].HeaderText = "Tên Hàng Hóa";
-                dataGridViewcthdxh.Columns["Soluong"].HeaderText = "Số Lượng";
-                dataGridViewcthdxh.Columns["DonGia"].HeaderText = "Đơn giá";
-                dataGridViewcthdxh.Columns["ThanhTien"].HeaderText = "Thành Tiền";
-                // Cài đặt màu sắc và kiểu chữ
-                dataGridViewcthdxh.BackgroundColor = System.Drawing.Color.LightGray;
-                dataGridViewcthdxh.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
-                dataGridViewcthdxh.DefaultCellStyle.Font = new Font("Arial", 10);
-
-                // Cài đặt chế độ chọn
-                dataGridViewcthdxh.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-
-                // Ngăn chỉnh sửa tất cả các cột
-                foreach (DataGridViewColumn column in dataGridViewcthdxh.Columns)
-                {
-                    column.ReadOnly = true;
-                }
-            }
-        }
-        
         private void ClearFields()
         {
             txt_idhd.Clear();
@@ -113,15 +57,85 @@ namespace QuanLyVatLieuXayDung
 
         private void UpdateTongTien(SqlConnection connection)
         {
-            string updateTotalQuery = "UPDATE HoaDonXuat SET TongTien = (SELECT SUM(SoLuong * DonGia) FROM ChiTietHoaDonXuat WHERE MaHoaDonXuat = @MaHoaDonXuat) WHERE MaHoaDonXuat = @MaHoaDonXuat";
+            string updateTotalQuery = "UPDATE HoaDonNhap SET TongTien = (SELECT SUM(SoLuong * DonGiaNhap) FROM ChiTietHoaDonNhap WHERE MaHoaDonNhap = @MaHoaDonNhap) WHERE MaHoaDonNhap = @MaHoaDonNhap";
             using (SqlCommand updateTotalCommand = new SqlCommand(updateTotalQuery, connection))
             {
-                updateTotalCommand.Parameters.AddWithValue("@MaHoaDonXuat", maHoaDonXuat);
+                updateTotalCommand.Parameters.AddWithValue("@MaHoaDonNhap", maHoaDonNhap);
                 updateTotalCommand.ExecuteNonQuery();
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        // Load data
+        private void LoadChiTiet()
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                string query = @"
+                                SELECT 
+                                    c.MaHoaDonNhap,
+                                    h.MaHangHoa,
+                                    h.TenSanPham,
+                                    c.SoLuong,
+                                    c.DonGiaNhap,
+                                    (c.SoLuong * c.DonGiaNhap) AS ThanhTien
+                                FROM 
+                                    ChiTietHoaDonNhap c
+                                JOIN 
+                                    HangHoa h ON c.MaHangHoa = h.MaHangHoa
+                                WHERE 
+                                    c.MaHoaDonNhap = @MaHoaDonNhap";
+
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@MaHoaDonNhap", maHoaDonNhap);
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+                dataGridViewcthdnh.DataSource = dt; // Hiển thị lên DataGridView
+
+                // Cài đặt các thuộc tính cho DataGridView
+                dataGridViewcthdnh.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dataGridViewcthdnh.Columns["maHoaDonNhap"].HeaderText = "Mã Hóa Đơn";
+                dataGridViewcthdnh.Columns["MaHangHoa"].HeaderText = "Mã Hàng Hóa";
+                dataGridViewcthdnh.Columns["TenSanPham"].HeaderText = "Tên Hàng Hóa";
+                dataGridViewcthdnh.Columns["Soluong"].HeaderText = "Số Lượng";
+                dataGridViewcthdnh.Columns["DonGiaNhap"].HeaderText = "Đơn giá";
+                dataGridViewcthdnh.Columns["ThanhTien"].HeaderText = "Thành Tiền";
+                // Cài đặt màu sắc và kiểu chữ
+                dataGridViewcthdnh.BackgroundColor = System.Drawing.Color.LightGray;
+                dataGridViewcthdnh.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
+                dataGridViewcthdnh.DefaultCellStyle.Font = new Font("Arial", 10);
+
+                // Cài đặt chế độ chọn
+                dataGridViewcthdnh.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
+                // Ngăn chỉnh sửa tất cả các cột
+                foreach (DataGridViewColumn column in dataGridViewcthdnh.Columns)
+                {
+                    column.ReadOnly = true;
+                }
+            }
+        }
+
+        private void FHDChiTietNhapHang_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridViewcthdxh_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dataGridViewcthdnh.Rows[e.RowIndex];
+                txt_idhd.Text = row.Cells["MaHoaDonNhap"].Value.ToString();
+                txt_idhh.Text = row.Cells["MaHangHoa"].Value.ToString();
+                txt_sl.Text = row.Cells["Soluong"].Value.ToString();
+                txt_giaTien.Text = row.Cells["DonGiaNhap"].Value.ToString();
+            }
+        }
+
+        private void btn_add_Click(object sender, EventArgs e)
         {
             int maHangHoa;
             int soLuong;
@@ -151,10 +165,10 @@ namespace QuanLyVatLieuXayDung
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
-                string checkQuery = "SELECT SoLuong FROM ChiTietHoaDonXuat WHERE MaHoaDonXuat = @MaHoaDonXuat AND MaHangHoa = @MaHangHoa";
+                string checkQuery = "SELECT SoLuong FROM ChiTietHoaDonNhap WHERE MaHoaDonNhap = @MaHoaDonNhap AND MaHangHoa = @MaHangHoa";
                 using (SqlCommand checkCommand = new SqlCommand(checkQuery, connection))
                 {
-                    checkCommand.Parameters.AddWithValue("@MaHoaDonXuat", maHoaDonXuat);
+                    checkCommand.Parameters.AddWithValue("@MaHoaDonNhap", maHoaDonNhap);
                     checkCommand.Parameters.AddWithValue("@MaHangHoa", maHangHoa);
 
                     object existingQty = checkCommand.ExecuteScalar();
@@ -166,25 +180,25 @@ namespace QuanLyVatLieuXayDung
                         int newSoLuong = existingSoLuong + soLuong;
                         thanhTien = donGia * newSoLuong; // Cập nhật lại thành tiền
 
-                        string updateQuery = "UPDATE ChiTietHoaDonXuat SET SoLuong = @SoLuong, DonGia = @DonGia WHERE MaHoaDonXuat = @MaHoaDonXuat AND MaHangHoa = @MaHangHoa";
+                        string updateQuery = "UPDATE ChiTietHoaDonNhap SET SoLuong = @SoLuong, DonGiaNhap = @DonGiaNhap WHERE MaHoaDonNhap = @MaHoaDonNhap AND MaHangHoa = @MaHangHoa";
                         using (SqlCommand updateCommand = new SqlCommand(updateQuery, connection))
                         {
                             updateCommand.Parameters.AddWithValue("@SoLuong", newSoLuong);
-                            updateCommand.Parameters.AddWithValue("@DonGia", donGia);
-                            updateCommand.Parameters.AddWithValue("@MaHoaDonXuat", maHoaDonXuat);
+                            updateCommand.Parameters.AddWithValue("@DonGiaNhap", donGia);
+                            updateCommand.Parameters.AddWithValue("@MaHoaDonNhap", maHoaDonNhap);
                             updateCommand.Parameters.AddWithValue("@MaHangHoa", maHangHoa);
                             updateCommand.ExecuteNonQuery();
                         }
                     }
                     else // Nếu mã hàng chưa tồn tại, thêm mới
                     {
-                        string insertQuery = "INSERT INTO ChiTietHoaDonXuat (MaHoaDonXuat, MaHangHoa, SoLuong, DonGia) VALUES (@MaHoaDonXuat, @MaHangHoa, @SoLuong, @DonGia)";
+                        string insertQuery = "INSERT INTO ChiTietHoaDonNhap (MaHoaDonNhap, MaHangHoa, SoLuong, DonGiaNhap) VALUES (@MaHoaDonNhap, @MaHangHoa, @SoLuong, @DonGiaNhap)";
                         using (SqlCommand insertCommand = new SqlCommand(insertQuery, connection))
                         {
-                            insertCommand.Parameters.AddWithValue("@MaHoaDonXuat", maHoaDonXuat);
+                            insertCommand.Parameters.AddWithValue("@MaHoaDonNhap", maHoaDonNhap);
                             insertCommand.Parameters.AddWithValue("@MaHangHoa", maHangHoa);
                             insertCommand.Parameters.AddWithValue("@SoLuong", soLuong);
-                            insertCommand.Parameters.AddWithValue("@DonGia", donGia);
+                            insertCommand.Parameters.AddWithValue("@DonGiaNhap", donGia);
                             insertCommand.ExecuteNonQuery();
                         }
                     }
@@ -192,23 +206,6 @@ namespace QuanLyVatLieuXayDung
                 UpdateTongTien(connection);
             }
             LoadChiTiet();
-            ClearFields();
-        }
-
-        private void dataGridViewcthdxh_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0)
-            {
-                DataGridViewRow row = dataGridViewcthdxh.Rows[e.RowIndex];
-                txt_idhd.Text = row.Cells["MaHoaDonXuat"].Value.ToString();
-                txt_idhh.Text = row.Cells["MaHangHoa"].Value.ToString();
-                txt_sl.Text = row.Cells["Soluong"].Value.ToString();
-                txt_giaTien.Text = row.Cells["DonGia"].Value.ToString();
-            }
-        }
-
-        private void btn_reset_Click(object sender, EventArgs e)
-        {
             ClearFields();
         }
 
@@ -242,13 +239,13 @@ namespace QuanLyVatLieuXayDung
                 connection.Open();
 
                 // Cập nhật số lượng và thành tiền cho hàng hóa
-                string updateQuery = "UPDATE ChiTietHoaDonXuat SET SoLuong = @SoLuong, DonGia = @DonGia WHERE MaHoaDonXuat = @MaHoaDonXuat AND MaHangHoa = @MaHangHoa";
+                string updateQuery = "UPDATE ChiTietHoaDonNhap SET SoLuong = @SoLuong, DonGiaNhap = @DonGiaNhap WHERE MaHoaDonNhap = @MaHoaDonNhap AND MaHangHoa = @MaHangHoa";
                 using (SqlCommand updateCommand = new SqlCommand(updateQuery, connection))
                 {
-                    updateCommand.Parameters.AddWithValue("@MaHoaDonXuat", maHoaDonXuat);
+                    updateCommand.Parameters.AddWithValue("@MaHoaDonNhap", maHoaDonNhap);
                     updateCommand.Parameters.AddWithValue("@MaHangHoa", maHangHoa);
                     updateCommand.Parameters.AddWithValue("@SoLuong", soLuong);
-                    updateCommand.Parameters.AddWithValue("@DonGia", donGia);
+                    updateCommand.Parameters.AddWithValue("@DonGiaNhap", donGia);
                     updateCommand.ExecuteNonQuery();
                 }
 
@@ -262,26 +259,31 @@ namespace QuanLyVatLieuXayDung
 
         private void btn_delete_Click(object sender, EventArgs e)
         {
-            if (dataGridViewcthdxh.CurrentRow == null)
+            if (dataGridViewcthdnh.CurrentRow == null)
             {
                 MessageBox.Show("Vui lòng chọn một dòng để xóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            int maHangHoa = (int)dataGridViewcthdxh.CurrentRow.Cells["MaHangHoa"].Value;
+            int maHangHoa = (int)dataGridViewcthdnh.CurrentRow.Cells["MaHangHoa"].Value;
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
-                string query = "DELETE FROM ChiTietHoaDonXuat WHERE MaHoaDonXuat = @MaHoaDonXuat AND MaHangHoa = @MaHangHoa";
+                string query = "DELETE FROM ChiTietHoaDonNhap WHERE MaHoaDonNhap = @MaHoaDonNhap AND MaHangHoa = @MaHangHoa";
                 SqlCommand command = new SqlCommand(query, connection);
-                command.Parameters.AddWithValue("@MaHoaDonXuat", maHoaDonXuat);
+                command.Parameters.AddWithValue("@MaHoaDonNhap", maHoaDonNhap);
                 command.Parameters.AddWithValue("@MaHangHoa", maHangHoa);
                 command.ExecuteNonQuery();
                 UpdateTongTien(connection);
             }
 
             LoadChiTiet();
+            ClearFields();
+        }
+
+        private void btn_reset_Click(object sender, EventArgs e)
+        {
             ClearFields();
         }
     }

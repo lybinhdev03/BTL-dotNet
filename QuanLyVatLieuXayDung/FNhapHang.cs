@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,6 +21,7 @@ namespace QuanLyVatLieuXayDung
         public FNhapHang()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
             LoadDataNCC();
             LoadDataHH();
             txt_idncc.ReadOnly = true;
@@ -110,10 +112,6 @@ namespace QuanLyVatLieuXayDung
             dataGridViewCthdn.Columns.Add("ThanhTien", "Thành Tiền");
             // Cài đặt các thuộc tính cho DataGridView
             dataGridViewCthdn.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            //dataGridViewCthdn.Columns["MaHangHoa"].HeaderText = "Mã Hàng Hóa";
-            //dataGridViewCthdn.Columns["SoLuong"].HeaderText = "Số Lượng";
-            //dataGridViewCthdn.Columns["DonGiaNhap"].HeaderText = "Đơn Giá Nhập";
-            //dataGridViewCthdn.Columns["ThanhTien"].HeaderText = "Thành Tiền";
 
             // Cài đặt màu sắc và kiểu chữ
             dataGridViewCthdn.BackgroundColor = System.Drawing.Color.LightGray;
@@ -164,19 +162,31 @@ namespace QuanLyVatLieuXayDung
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
-                string query = "INSERT INTO HoaDonNhap (MaNhaCungCap, NgayNhap, TongTien) OUTPUT INSERTED.MaHoaDonNhap VALUES (@MaNhaCungCap, @NgayNhap, 0)";
 
-                using (SqlCommand cmd = new SqlCommand(query, conn))
+                if (string.IsNullOrEmpty(txt_idncc.Text) || string.IsNullOrEmpty(txt_namencc.Text) || string.IsNullOrEmpty(txt_sdtncc.Text))
                 {
-                    cmd.Parameters.AddWithValue("@MaNhaCungCap", int.Parse(txt_idncc.Text));
-                    cmd.Parameters.AddWithValue("@NgayNhap", DateTime.Now);
+                    MessageBox.Show("Vui lòng nhập đầy đủ thông tin hóa đơn nhập.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                string query = "INSERT INTO HoaDonNhap (MaNhaCungCap, NgayNhap, TongTien) OUTPUT INSERTED.MaHoaDonNhap VALUES (@MaNhaCungCap, @NgayNhap, 0)";
+                try
+                {
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@MaNhaCungCap", int.Parse(txt_idncc.Text));
+                        cmd.Parameters.AddWithValue("@NgayNhap", DateTime.Now);
 
-                    currentMaHoaDonNhap = (int)cmd.ExecuteScalar(); // Lưu mã hóa đơn mới tạo
+                        currentMaHoaDonNhap = (int)cmd.ExecuteScalar(); // Lưu mã hóa đơn mới tạo
 
-                    txt_information.Text = $"Mã hóa đơn: {currentMaHoaDonNhap}" + Environment.NewLine;
-                    txt_information.Text += $"Nhà cung cấp: {txt_namencc.Text}" + Environment.NewLine;
-                    txt_information.Text += "Ngày nhập: " + DateTime.Now.ToString("dd/MM/yyyy") + Environment.NewLine;
-                    dataGridViewCthdn.Rows.Clear(); // Xóa dữ liệu cũ nếu có
+                        txt_information.Text = $"Mã hóa đơn: {currentMaHoaDonNhap}" + Environment.NewLine;
+                        txt_information.Text += $"Nhà cung cấp: {txt_namencc.Text}" + Environment.NewLine;
+                        txt_information.Text += "Ngày nhập: " + DateTime.Now.ToString("dd/MM/yyyy") + Environment.NewLine;
+                        dataGridViewCthdn.Rows.Clear(); // Xóa dữ liệu cũ nếu có
+                    }               
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Đã xảy ra lỗi !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
         }
@@ -189,22 +199,29 @@ namespace QuanLyVatLieuXayDung
 
                 // Thêm chi tiết hóa đơn nhập
                 string insertDetailQuery = "INSERT INTO ChiTietHoaDonNhap (MaHoaDonNhap, MaHangHoa, SoLuong, DonGiaNhap) VALUES (@MaHoaDonNhap, @MaHangHoa, @SoLuong, @DonGiaNhap)";
-                using (SqlCommand cmd = new SqlCommand(insertDetailQuery, conn))
+                try
                 {
-                    cmd.Parameters.AddWithValue("@MaHoaDonNhap", currentMaHoaDonNhap);
-                    cmd.Parameters.AddWithValue("@MaHangHoa", int.Parse(txt_idhh.Text));
-                    cmd.Parameters.AddWithValue("@SoLuong", int.Parse(txt_sl.Text));
-                    cmd.Parameters.AddWithValue("@DonGiaNhap", float.Parse(txt_gianhap.Text));
+                    using (SqlCommand cmd = new SqlCommand(insertDetailQuery, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@MaHoaDonNhap", currentMaHoaDonNhap);
+                        cmd.Parameters.AddWithValue("@MaHangHoa", int.Parse(txt_idhh.Text));
+                        cmd.Parameters.AddWithValue("@SoLuong", int.Parse(txt_sl.Text));
+                        cmd.Parameters.AddWithValue("@DonGiaNhap", float.Parse(txt_gianhap.Text));
 
-                    cmd.ExecuteNonQuery();
+                        cmd.ExecuteNonQuery();
+                    }
+                    // Thêm dữ liệu vào DataGridView
+                    float thanhTien = int.Parse(txt_sl.Text) * float.Parse(txt_gianhap.Text);
+                    dataGridViewCthdn.Rows.Add(txt_idhh.Text, txt_sl.Text, txt_gianhap.Text, thanhTien);
+
+
+                    // Cập nhật tổng tiền cho HoaDonNhap
+                    CapNhatTongTienHoaDon(conn);
                 }
-                // Thêm dữ liệu vào DataGridView
-                float thanhTien = int.Parse(txt_sl.Text) * float.Parse(txt_gianhap.Text);
-                dataGridViewCthdn.Rows.Add(txt_idhh.Text, txt_sl.Text, txt_gianhap.Text, thanhTien);
-
-
-                // Cập nhật tổng tiền cho HoaDonNhap
-                CapNhatTongTienHoaDon(conn);
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Vui lòng xem lại dữ liệu nhập !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
 
         }
@@ -228,9 +245,7 @@ namespace QuanLyVatLieuXayDung
                     updateCmd.Parameters.AddWithValue("@MaHoaDonNhap", currentMaHoaDonNhap);
                     updateCmd.ExecuteNonQuery();
                 }
-                // Cập nhật thông tin hóa đơn lên TextBox
-                //txt_information.Text = $"Hóa Đơn Nhập: {currentMaHoaDonNhap}, Nhà Cung Cấp: {txt_idncc.Text}, Ngày Nhập: {DateTime.Now}, Tổng Tiền: {tongTien}";
-
+                // Cập nhật thông tin hóa đơn lên TextBox              
                 txt_information.Text = $"Mã hóa đơn: {currentMaHoaDonNhap}" + Environment.NewLine;
                 txt_information.Text += $"Nhà cung cấp: {txt_namencc.Text}" + Environment.NewLine;
                 txt_information.Text += "Ngày nhập: " + DateTime.Now.ToString("dd/MM/yyyy") + Environment.NewLine;
@@ -242,19 +257,23 @@ namespace QuanLyVatLieuXayDung
         private void btn_addhdn_Click(object sender, EventArgs e)
         {
             TaoHoaDonNhap();
-            MessageBox.Show("Hóa đơn nhập được tạo thành công với mã: " + currentMaHoaDonNhap);
+            if (currentMaHoaDonNhap != 0)
+            {
+                MessageBox.Show("Hóa đơn nhập được tạo thành công với mã: " + currentMaHoaDonNhap);
+            }
+            
         }
 
         private void btn_addcthdn_Click(object sender, EventArgs e)
         {
             if (currentMaHoaDonNhap == 0)
             {
-                MessageBox.Show("Vui lòng tạo hóa đơn trước khi thêm chi tiết.");
+                MessageBox.Show("Vui lòng tạo hóa đơn trước khi thêm chi tiết !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
                 ThemChiTietHoaDonNhap();
-                MessageBox.Show("Chi tiết hóa đơn nhập đã được thêm.");
+                //MessageBox.Show("Chi tiết hóa đơn nhập đã được thêm.");
             }
         }
 
@@ -272,6 +291,11 @@ namespace QuanLyVatLieuXayDung
             txt_idhh.Clear();
             txt_sl.Clear();
             txt_gianhap.Clear();
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

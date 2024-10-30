@@ -19,6 +19,7 @@ namespace QuanLyVatLieuXayDung
         public FKhachHang()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
             LoadData();
             txt_id.ReadOnly = true;
             dataGridViewKhachHang.ReadOnly = true;

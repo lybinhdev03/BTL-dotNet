@@ -57,3 +57,5 @@ E:\Project\btl_dotnet\BTL-dotNet\QuanLyVatLieuXayDung\obj\Debug\QuanLyVatLieuXay
 E:\Project\btl_dotnet\BTL-dotNet\QuanLyVatLieuXayDung\obj\Debug\QuanLyVatLieuXayDung.FKhachHang.resources
 E:\Project\btl_dotnet\BTL-dotNet\QuanLyVatLieuXayDung\obj\Debug\QuanLyVatLieuXayDung.FHDChiTietXuatHang.resources
 E:\Project\btl_dotnet\BTL-dotNet\QuanLyVatLieuXayDung\obj\Debug\QuanLyVatLieuXayDung.FHDXuatHang.resources
+E:\Project\btl_dotnet\BTL-dotNet\QuanLyVatLieuXayDung\obj\Debug\QuanLyVatLieuXayDung.FHDNhapHang.resources
+E:\Project\btl_dotnet\BTL-dotNet\QuanLyVatLieuXayDung\obj\Debug\QuanLyVatLieuXayDung.FHDChiTietNhapHang.resources

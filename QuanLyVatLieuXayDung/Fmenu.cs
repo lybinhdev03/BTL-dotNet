@@ -52,7 +52,8 @@ namespace QuanLyVatLieuXayDung
 
         private void đặtHàngToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-
+            FHDNhapHang fnh = new FHDNhapHang();
+            fnh.Show();
         }
 
         private void traCứuThôngItnToolStripMenuItem_Click(object sender, EventArgs e)
