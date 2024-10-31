@@ -72,5 +72,17 @@ namespace QuanLyVatLieuXayDung
             FKhachHang fkh = new FKhachHang();
             fkh.Show();
         }
+
+        private void cậpNhậtThôngTinToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            FKhoHang fkh = new FKhoHang();
+            fkh.Show();
+        }
+
+        private void cậpNhậtThôngTinToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FNhaCungCap fncc = new FNhaCungCap();
+            fncc.Show();
+        }
     }
 }

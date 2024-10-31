@@ -82,6 +82,18 @@
     <Compile Include="FKhachHang.Designer.cs">
       <DependentUpon>FKhachHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="FKhoHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FKhoHang.Designer.cs">
+      <DependentUpon>FKhoHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FNhaCungCap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FNhaCungCap.Designer.cs">
+      <DependentUpon>FNhaCungCap.cs</DependentUpon>
+    </Compile>
     <Compile Include="FNhapHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,6 +142,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FKhachHang.resx">
       <DependentUpon>FKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FKhoHang.resx">
+      <DependentUpon>FKhoHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FNhaCungCap.resx">
+      <DependentUpon>FNhaCungCap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FNhapHang.resx">
       <DependentUpon>FNhapHang.cs</DependentUpon>
