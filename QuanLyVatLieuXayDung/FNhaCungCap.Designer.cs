@@ -342,6 +342,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "FNhaCungCap";
             this.Text = "FNhaCungCap";
+            this.Load += new System.EventHandler(this.FNhaCungCap_Load);
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Nhacungcap)).EndInit();
             this.groupBox1.ResumeLayout(false);

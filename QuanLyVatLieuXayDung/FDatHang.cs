@@ -15,11 +15,11 @@ namespace QuanLyVatLieuXayDung
     {
         // Dùng cái này khi làm với sql server (đổi user, pass)
         //private readonly string connectionString = "Data Source=your_server_name;Initial Catalog=vlxd;User ID=;Password=;";
-        private readonly string connectionString = "Server=localhost,1433; Database=db_vlxd; User Id=sa; Password=@Khongbiet123;";
+        public readonly string connectionString = "Server=DESKTOP-Q53GGI4\\SQLEXPRESS;Database=vlxd;Integrated Security=True;";
         public FDatHang()
         {
             InitializeComponent();
-            this.StartPosition = FormStartPosition.CenterScreen;
+            
             LoadDataHH();
             txt_idhh.ReadOnly = true;
             txt_namehh.ReadOnly = true;
@@ -251,6 +251,7 @@ namespace QuanLyVatLieuXayDung
                         cmd.Parameters.AddWithValue("@DonGia", donGia);
 
                         cmd.ExecuteNonQuery();
+                        UpdateKhoHang(maHangHoa,soLuong);
                         // Thêm dữ liệu vào DataGridView
                         float thanhTienhdx = int.Parse(txt_sl.Text) * float.Parse(txt_giatien.Text);
                         dataGridViewCthdx.Rows.Add(txt_idhh.Text, txt_namehh.Text, txt_sl.Text, txt_giatien.Text, thanhTienhdx);
@@ -258,6 +259,46 @@ namespace QuanLyVatLieuXayDung
                     }
                 } catch(Exception ex) {
                     MessageBox.Show("Vui lòng xem lại dữ liệu nhập !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+        }
+        private void UpdateKhoHang(int maHangHoa, int soLuong)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                SqlTransaction transaction = connection.BeginTransaction();
+                SqlCommand command = connection.CreateCommand();
+                command.Transaction = transaction;
+
+                try
+                {
+                    // Cập nhật số lượng trong KhoHang
+                    command.CommandText = "UPDATE KhoHang SET SoLuong = SoLuong - @SoLuong WHERE MaHangHoa = @MaHangHoa";
+                    command.Parameters.AddWithValue("@SoLuong", soLuong);
+                    command.Parameters.AddWithValue("@MaHangHoa", maHangHoa);
+
+                    int rowsAffected = command.ExecuteNonQuery();
+
+                    // Kiểm tra xem có bản ghi nào được cập nhật không
+                    if (rowsAffected > 0)
+                    {
+                        // Nếu có, xác nhận giao dịch
+                        transaction.Commit();
+                        MessageBox.Show("Cập nhật thành công.");
+                    }
+                    else
+                    {
+                        // Nếu không có bản ghi nào được cập nhật, hủy giao dịch
+                        transaction.Rollback();
+                        MessageBox.Show("Không tìm thấy mặt hàng với mã: " + maHangHoa);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Nếu có lỗi xảy ra, hủy giao dịch
+                    transaction.Rollback();
+                    MessageBox.Show("Có lỗi xảy ra: " + ex.Message);
                 }
             }
         }

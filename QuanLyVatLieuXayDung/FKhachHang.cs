@@ -15,11 +15,11 @@ namespace QuanLyVatLieuXayDung
     {
         // Dùng cái này khi làm với sql server (đổi user, pass)
         //private readonly string connectionString = "Data Source=your_server_name;Initial Catalog=vlxd;User ID=;Password=;";
-        private readonly string connectionString = "Server=localhost,1433; Database=db_vlxd; User Id=sa; Password=@Khongbiet123;"; //docker
+        public readonly string connectionString = "Server=DESKTOP-Q53GGI4\\SQLEXPRESS;Database=vlxd;Integrated Security=True;"; //docker
         public FKhachHang()
         {
             InitializeComponent();
-            this.StartPosition = FormStartPosition.CenterScreen;
+            
             LoadData();
             txt_id.ReadOnly = true;
             dataGridViewKhachHang.ReadOnly = true;
@@ -227,6 +227,11 @@ namespace QuanLyVatLieuXayDung
                     MessageBox.Show($"Có lỗi xảy ra: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void FKhachHang_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

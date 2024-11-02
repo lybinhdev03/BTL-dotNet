@@ -15,11 +15,11 @@ namespace QuanLyVatLieuXayDung
     {
         // Dùng cái này khi làm với sql server (đổi user, pass)
         //private readonly string connectionString = "Data Source=your_server_name;Initial Catalog=vlxd;User ID=;Password=;";
-        private readonly string connectionString = "Server=localhost,1433; Database=db_vlxd; User Id=sa; Password=@Khongbiet123;";
+        public readonly string connectionString = "Server=DESKTOP-Q53GGI4\\SQLEXPRESS;Database=vlxd;Integrated Security=True;";
         public FHDNhapHang()
         {
             InitializeComponent();
-            this.StartPosition = FormStartPosition.CenterScreen;
+            
             txt_idhd.ReadOnly = true;
             txt_tongTien.ReadOnly = true;
             LoadData();
@@ -222,6 +222,11 @@ namespace QuanLyVatLieuXayDung
             {
                 MessageBox.Show("Vui lòng chọn hóa đơn để xóa.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void FHDNhapHang_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace QuanLyVatLieuXayDung
@@ -8,7 +9,7 @@ namespace QuanLyVatLieuXayDung
     public partial class FNhaCungCap : Form
     {
         // Chuỗi kết nối tới SQL Server
-        private readonly string connectionString = "Data Source=LYBINHDEV;Initial Catalog=db_vlxd; Integrated Security=true;";
+        public readonly string connectionString = "Server=DESKTOP-Q53GGI4\\SQLEXPRESS;Database=vlxd;Integrated Security=True;";
 
         public FNhaCungCap()
         {
@@ -214,6 +215,11 @@ namespace QuanLyVatLieuXayDung
                     MessageBox.Show("Error: " + ex.Message);
                 }
             }
+        }
+
+        private void FNhaCungCap_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -8,7 +8,8 @@ namespace QuanLyVatLieuXayDung
 {
     public partial class FKhoHang : Form
     {
-        private readonly string connectionString = "Data Source=LYBINHDEV;Initial Catalog=db_vlxd;Integrated Security=true;";
+        public readonly string connectionString = "Server=DESKTOP-Q53GGI4\\SQLEXPRESS;Database=vlxd;Integrated Security=True;";
+
         private string originalMaKho = "";  // Lưu mã kho ban đầu
         private string originalMaHangHoa = "";  // Lưu mã hàng hóa ban đầu
 
@@ -223,6 +224,16 @@ namespace QuanLyVatLieuXayDung
                     MessageBox.Show("Error: " + ex.Message);
                 }
             }
+        }
+
+        private void FKhoHang_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

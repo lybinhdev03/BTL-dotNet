@@ -33,8 +33,58 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EPPlus, Version=7.4.2.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.7.4.2\lib\net462\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus.Interfaces, Version=6.1.1.0, Culture=neutral, PublicKeyToken=a694d7f3b0907a61, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.Interfaces.6.1.1\lib\net462\EPPlus.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus.System.Drawing, Version=6.1.1.0, Culture=neutral, PublicKeyToken=2308d35469c9bac0, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.System.Drawing.6.1.1\lib\net462\EPPlus.System.Drawing.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IO.RecyclableMemoryStream, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IO.RecyclableMemoryStream.3.0.1\lib\netstandard2.0\Microsoft.IO.RecyclableMemoryStream.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
     <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.5.0.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,6 +96,67 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataSetHangHoa.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetHangHoa.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetKhoHang.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetKhoHang.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetNCC.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetNCC.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DKhachHang.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DKhachHang.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DNhanVien.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DNhanVien.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FBaoCaoHH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FBaoCaoHH.Designer.cs">
+      <DependentUpon>FBaoCaoHH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FBaoCaoKH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FBaoCaoKH.Designer.cs">
+      <DependentUpon>FBaoCaoKH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FBaoCaoKho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FBaoCaoKho.Designer.cs">
+      <DependentUpon>FBaoCaoKho.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FBaoCaoNCC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FBaoCaoNCC.Designer.cs">
+      <DependentUpon>FBaoCaoNCC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FBaoCaoNV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FBaoCaoNV.Designer.cs">
+      <DependentUpon>FBaoCaoNV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FBaoHanh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FBaoHanh.Designer.cs">
+      <DependentUpon>FBaoHanh.cs</DependentUpon>
+    </Compile>
     <Compile Include="FDatHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,6 +229,12 @@
     <Compile Include="Fmenu.Designer.cs">
       <DependentUpon>Fmenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="FThongKe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FThongKe.Designer.cs">
+      <DependentUpon>FThongKe.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -125,6 +242,30 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="vlxdDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>vlxdDataSet.xsd</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FBaoCaoHH.resx">
+      <DependentUpon>FBaoCaoHH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FBaoCaoKH.resx">
+      <DependentUpon>FBaoCaoKH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FBaoCaoKho.resx">
+      <DependentUpon>FBaoCaoKho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FBaoCaoNCC.resx">
+      <DependentUpon>FBaoCaoNCC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FBaoCaoNV.resx">
+      <DependentUpon>FBaoCaoNV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FBaoHanh.resx">
+      <DependentUpon>FBaoHanh.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FDatHang.resx">
       <DependentUpon>FDatHang.cs</DependentUpon>
     </EmbeddedResource>
@@ -161,11 +302,75 @@
     <EmbeddedResource Include="Fmenu.resx">
       <DependentUpon>Fmenu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FThongKe.resx">
+      <DependentUpon>FThongKe.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReportHangHoa.rdlc" />
+    <EmbeddedResource Include="ReportKhoHang.rdlc" />
+    <EmbeddedResource Include="ReportNCC.rdlc" />
+    <EmbeddedResource Include="RKhachHang.rdlc" />
+    <EmbeddedResource Include="RNhanVien.rdlc" />
+    <None Include="DataSetHangHoa.xsc">
+      <DependentUpon>DataSetHangHoa.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetHangHoa.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetHangHoa.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetHangHoa.xss">
+      <DependentUpon>DataSetHangHoa.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetKhoHang.xsc">
+      <DependentUpon>DataSetKhoHang.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetKhoHang.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetKhoHang.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetKhoHang.xss">
+      <DependentUpon>DataSetKhoHang.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetNCC.xsc">
+      <DependentUpon>DataSetNCC.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetNCC.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetNCC.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetNCC.xss">
+      <DependentUpon>DataSetNCC.xsd</DependentUpon>
+    </None>
+    <None Include="DKhachHang.xsc">
+      <DependentUpon>DKhachHang.xsd</DependentUpon>
+    </None>
+    <None Include="DKhachHang.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DKhachHang.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DKhachHang.xss">
+      <DependentUpon>DKhachHang.xsd</DependentUpon>
+    </None>
+    <None Include="DNhanVien.xsc">
+      <DependentUpon>DNhanVien.xsd</DependentUpon>
+    </None>
+    <None Include="DNhanVien.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DNhanVien.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DNhanVien.xss">
+      <DependentUpon>DNhanVien.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -175,6 +380,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="vlxdDataSet.xsc">
+      <DependentUpon>vlxdDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="vlxdDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>vlxdDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="vlxdDataSet.xss">
+      <DependentUpon>vlxdDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -208,6 +424,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\vlxd.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
